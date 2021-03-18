@@ -19,7 +19,7 @@ const items = [
 
 export default () => {
   return (
-    <div>
+    <div className="ui segment">
       <Accordion items={items} />
     </div>
   );
