@@ -5,6 +5,8 @@ const key = process.env.REACT_APP_MY_GOOGLE_TRANSLATE_KEY;
 
 const Convert = ({ language, text }) => {
   const [translated, setTranslated] = useState("");
+  const [debouncedText, setDebouncedText] = useState(text);
+
   useEffect(() => {
     const doTranslation = async () => {
       const { data } = await axios.post(
@@ -12,7 +14,7 @@ const Convert = ({ language, text }) => {
         {},
         {
           params: {
-            q: text,
+            q: debouncedText,
             target: language.value,
             key: key,
           },
@@ -23,7 +25,16 @@ const Convert = ({ language, text }) => {
     };
 
     doTranslation();
-  }, [language, text]);
+  }, [language, debouncedText]);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedText(text);
+    }, 500);
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [text]);
 
   return <h1 className="ui header">{translated}</h1>;
 };
