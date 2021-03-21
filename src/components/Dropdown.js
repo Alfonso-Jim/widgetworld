@@ -50,6 +50,9 @@ const Dropdown = ({ options, selected, onSelectedChanged }) => {
             {renderedOptions}
           </div>
         </div>
+        <h4 className="ui segment" style={{ color: selected.value }}>
+          {selected.label} is a great color!
+        </h4>
       </div>
     </div>
   );
