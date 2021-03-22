@@ -22,7 +22,7 @@ const Accordion = ({ items }) => {
       </React.Fragment>
     );
   });
-  return <div className="ui styled accordion">{renderedItems}</div>;
+  return <div className="ui styled accordion fluid">{renderedItems}</div>;
 };
 
 export default Accordion;

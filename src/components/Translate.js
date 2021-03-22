@@ -12,12 +12,20 @@ const options = [
     value: "ar",
   },
   {
+    label: "Dutch",
+    value: "nl",
+  },
+  {
     label: "Hindi",
     value: "hi",
   },
   {
-    label: "Dutch",
-    value: "nl",
+    label: "Polish",
+    value: "pl",
+  },
+  {
+    label: "Spanish",
+    value: "es",
   },
 ];
 
