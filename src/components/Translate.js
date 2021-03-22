@@ -35,6 +35,12 @@ const Translate = () => {
   return (
     <div>
       <div className="ui form">
+        <p className="ui segment yellow">
+          Warning: The translation api will work only if it's called from
+          localhost:3000. If you can't see any text being translated you can
+          contact <a href="https://alfonso-dev.com/contact/">me</a> for a
+          private demo
+        </p>
         <div className="field">
           <label>Write something</label>
           <input
